@@ -25,13 +25,13 @@ jobs:
     - name: Build and push Backend
       uses: docker/build-push-action@v5
       with:
-        context: ./backend
+        context: ./studentmanagement-clone
         push: true
         tags: kaloina/cicd-backend:latest
 
     - name: Build and push Frontend
       uses: docker/build-push-action@v5
       with:
-        context: ./frontend
+        context: ./projet-tp01-clone
         push: true
         tags: kaloina/cicd-frontend:latest
