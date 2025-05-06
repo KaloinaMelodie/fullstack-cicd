@@ -9,7 +9,7 @@ services:
     ports:
       - "8010:8010"
     env_file:
-      - ./studentmanagement-clone/.env
+      - ./studentmanagement-clone/.env.production
     restart: always
 
   frontend:
@@ -19,4 +19,6 @@ services:
     container_name: student-frontend
     ports:
       - "3000:80" # 3000 pour accéder en local, Nginx écoute sur 80
+    env_file:
+      - ./projet-tp01-clone/.env.production
     restart: always

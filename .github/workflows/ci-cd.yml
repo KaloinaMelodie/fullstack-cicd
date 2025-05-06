@@ -27,11 +27,11 @@ jobs:
       with:
         context: ./backend
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/myapp-backend:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/cicd-backend:latest
 
     - name: Build and push Frontend
       uses: docker/build-push-action@v5
       with:
         context: ./frontend
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/myapp-frontend:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/cicd-frontend:latest
