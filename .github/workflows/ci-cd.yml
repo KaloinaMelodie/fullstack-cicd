@@ -26,7 +26,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: ./studentmanagement-clone
-        file: ./studentmanagement-clone/Dockerfile
+        file: Dockerfile
         push: true
         tags: kaloina/cicd-backend:latest
 
@@ -34,6 +34,6 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: ./projet-tp01-clone
-        file: ./projet-tp01-clone/Dockerfile
+        file: Dockerfile
         push: true
         tags: kaloina/cicd-frontend:latest
