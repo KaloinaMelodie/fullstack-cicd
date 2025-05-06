@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./studentmanagement-clone
+      dockerfile: Dockerfile
+    container_name: student-backend
+    ports:
+      - "8010:8010"
+    env_file:
+      - ./studentmanagement-clone/.env
+    restart: always
+
+  frontend:
+    build:
+      context: ./projet-tp01-clone
+      dockerfile: Dockerfile
+    container_name: student-frontend
+    ports:
+      - "3000:80" # 3000 pour accéder en local, Nginx écoute sur 80
+    restart: always
