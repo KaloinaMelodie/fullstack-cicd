@@ -1,0 +1,7 @@
+[submodule "studentmanagement-clone"]
+    path = studentmanagement-clone
+    url = https://github.com/KaloinaMelodie/studentmanagement-clone.git
+
+[submodule "projet-tp01-clone"]
+    path = projet-tp01-clone
+    url = https://github.com/KaloinaMelodie/projet-tp01-clone.git
