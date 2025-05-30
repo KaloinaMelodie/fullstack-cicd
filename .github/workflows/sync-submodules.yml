@@ -1,0 +1,36 @@
+name: Sync Submodules
+
+on:
+  schedule:
+    - cron: '*/0.1 * * * *'  # toutes les 10 minutes
+  workflow_dispatch:        # déclenchable manuellement
+
+jobs:
+  update-submodules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout fullstack-cicd with submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        token: ${{ secrets.GH_TOKEN }}  # un token avec accès en écriture
+
+    - name: Configure Git
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+
+    - name: Pull latest submodules
+      run: |
+        git submodule update --remote --merge
+
+    - name: Commit if there are changes
+      run: |
+        if ! git diff --quiet; then
+          git add .
+          git commit -m "Update submodules to latest commit"
+          git push origin main
+        else
+          echo "No changes to commit"
+        fi
