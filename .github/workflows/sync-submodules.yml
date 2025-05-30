@@ -2,7 +2,7 @@ name: Sync Submodules
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # toutes les 10 minutes
+    - cron: '*/5 * * * *'  
   workflow_dispatch:        # déclenchable manuellement
 
 jobs:
