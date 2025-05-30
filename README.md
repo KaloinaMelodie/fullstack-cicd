@@ -7,3 +7,6 @@ git submodule update --init --recursive
 
 run docker and then
 docker-compose up --build
+
+
+git submodule update --remote
