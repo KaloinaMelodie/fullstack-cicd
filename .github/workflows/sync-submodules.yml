@@ -25,9 +25,14 @@ jobs:
         git config user.name "github-actions"
         git config user.email "github-actions@github.com"
 
-    - name: Pull latest submodules
+    # - name: Pull latest submodules
+    #   run: |
+    #     git submodule update --remote --merge
+
+    - name: Pull submodule updates
       run: |
-        git submodule update --remote --merge
+        git submodule update --remote
+
 
     - name: Commit if there are changes
       run: |

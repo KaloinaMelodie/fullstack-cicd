@@ -10,3 +10,5 @@ docker-compose up --build
 
 
 git submodule update --remote
+cd studentmanagement-clone
+git merge origin/main --allow-unrelated-histories
