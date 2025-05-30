@@ -19,7 +19,8 @@ jobs:
       with:
         submodules: recursive
         token: ${{ secrets.GH_TOKEN }}  # un token avec accès en écriture
-
+        cron: '*/5 * * * *' 
+        
     - name: Configure Git
       run: |
         git config user.name "github-actions"
